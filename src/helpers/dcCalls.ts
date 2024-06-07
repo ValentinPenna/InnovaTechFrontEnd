@@ -6,8 +6,8 @@ export const getProducts = async () =>{
     try {
         const response = await fetch(`${apiUrl}/products`, {
             method: "GET",
-            cache: "no-cache",
-            // next: { revalidate: 600 },
+            // cache: "no-cache",
+            next: { revalidate: 600 },
         })
         const products = await response.json()
         return products
