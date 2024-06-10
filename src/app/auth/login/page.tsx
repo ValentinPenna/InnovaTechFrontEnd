@@ -31,7 +31,6 @@ export default function Login() {
 				localStorage.setItem("userSession", JSON.stringify({ token, userData: user }));
 				alert("Login exitoso");
 				router.push("/");
-				console.log(user)
 			} else if (response.message === "Invalid password") {
 				alert ("Credenciales incorrectas");
 			}

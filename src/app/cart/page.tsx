@@ -52,7 +52,7 @@ export default function Cart() {
                 alert("No hay elementos en el carrito")
             }
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 

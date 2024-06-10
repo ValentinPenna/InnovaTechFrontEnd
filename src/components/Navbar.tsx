@@ -25,7 +25,6 @@ export default function Navbar() {
 
 	const handleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
-		console.log(isMenuOpen);
 	};
 
 	const closeMenuOnResize = () => {

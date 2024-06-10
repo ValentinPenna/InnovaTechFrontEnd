@@ -1,5 +1,4 @@
 import IProduct, { RegisterProps } from "@/interfaces/types";
-import axios, { AxiosInstance } from "axios";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const getProducts = async () =>{
@@ -12,7 +11,7 @@ export const getProducts = async () =>{
         const products = await response.json()
         return products
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -23,7 +22,7 @@ export const getProductById = async (id: number) =>{
         if (!product) throw new Error("Product not found")
         return product
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -40,7 +39,7 @@ export const loginUser = async (email: string, password: string) =>{
         const user = await response.json()
         return user
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -57,7 +56,7 @@ export const registerUser = async ({name, email, password, address, phone}: Regi
         const user = await response.json()
         return user
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -75,13 +74,12 @@ export const createOrder = async ( products: number[], token: string) =>{
         const order = await response.json()
         return order
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
 export const getOrdersByUser = async (token: string) =>{
     try {
-        console.log(token)
         const response = await fetch(`${apiUrl}/users/orders`, {
             method: "GET",
             headers: {
@@ -94,6 +92,6 @@ export const getOrdersByUser = async (token: string) =>{
 
         return orders
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }

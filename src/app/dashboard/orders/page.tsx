@@ -11,7 +11,6 @@ export default function Orders() {
     useEffect(() => {
         if(typeof window !== "undefined" && window.localStorage) {
             const userData: userSession = JSON.parse(localStorage.getItem("userSession")!)
-            console.log(userData)
             setUserSession(userData)
             !userData?.token && redirect("/auth/login")
         }
@@ -20,7 +19,6 @@ export default function Orders() {
     useEffect(() => {
         const fetchData = async () => {
             const orders = await getOrdersByUser(userSession?.token!)
-            // console.log(orders)
             if (orders) setOrders(orders)
         }
 

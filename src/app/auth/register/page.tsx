@@ -30,7 +30,7 @@ export default function Register() {
 			if (user) alert("Registrado exitosamente");
 			router.push("/auth/login");
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

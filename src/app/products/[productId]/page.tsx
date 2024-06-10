@@ -9,7 +9,6 @@ export default function ProductDetail({params}:{params: {productId: string}}) {
     const [product, setProduct] = useState<IProduct>()
     const [userData, setUserData] = useState<userSession>()
     const {productId} = params
-    // const product: IProduct = await getProductById(Number(productId))
 
     useEffect(() => {
         if(typeof window !== "undefined" && window.localStorage){
@@ -25,7 +24,6 @@ export default function ProductDetail({params}:{params: {productId: string}}) {
     }, [])
 
     const handleAddCart = (e: any) => {
-        console.log(userData?.token)
         if(!userData?.token){
             alert("Debes estar logueado")
         } else {
